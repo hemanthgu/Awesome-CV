@@ -1,22 +1,26 @@
-.PHONY: examples
+.PHONY: all clean buildclean
 
 CC = lualatex
-EXAMPLES_DIR = examples
-RESUME_DIR = examples/resume
-CV_DIR = examples/cv
-RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
-CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
+OUTPUT_DIR = results
 
-examples: $(foreach x, coverletter cv resume, $x.pdf)
+vpath %.pdf $(OUTPUT_DIR)
 
-resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+all: hemanthg-resume.pdf hemanthg-cv.pdf hemanthg-coverletter.pdf
 
-cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+hemanthg-resume.pdf: hemanthg-resume.tex
 
-coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+hemanthg-cv.pdf: hemanthg-cv.tex
+
+hemanthg-coverletter.pdf: hemanthg-coverletter.tex
+
+%.pdf: %.tex
+	$(CC) -output-directory=$(OUTPUT_DIR) $<
+
+.ONESHELL:
+buildclean:
+	rm  $(OUTPUT_DIR)/*.log
+	rm  $(OUTPUT_DIR)/*.out
+	rm  $(OUTPUT_DIR)/*.aux
 
 clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf
+	rm $(OUTPUT_DIR)/*
