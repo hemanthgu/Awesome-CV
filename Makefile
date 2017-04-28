@@ -18,9 +18,13 @@ hemanthg-coverletter.pdf: hemanthg-coverletter.tex
 
 .ONESHELL:
 buildclean:
-	rm  $(OUTPUT_DIR)/*.log
-	rm  $(OUTPUT_DIR)/*.out
-	rm  $(OUTPUT_DIR)/*.aux
+	rm -f $(OUTPUT_DIR)/*.log
+	rm -f $(OUTPUT_DIR)/*.out
+	rm -f $(OUTPUT_DIR)/*.aux
 
+.ONESHELL:
 clean:
-	rm $(OUTPUT_DIR)/*
+	rm -f $(OUTPUT_DIR)/*
+	rm -f *.log
+	rm -f *.out
+	rm -f *.aux
