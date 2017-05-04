@@ -53,6 +53,7 @@ At a command prompt, run
 
 ```bash
 $ xelatex {your-cv}.tex
+$ make -B hemanthg-cv.pdf
 ```
 
 This should result in the creation of ``{your-cv}.pdf``
