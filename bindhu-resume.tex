@@ -4,14 +4,10 @@
 %
 % This template has been downloaded from:
 % https://github.com/posquit0/Awesome-CV
+%
 % Author:
 % Claud D. Park <posquit0.bj@gmail.com>
 % http://www.posquit0.com
-%
-% Adapted to
-% https://github.com/hemanthgu/Awesome-CV
-% Adaptations by:
-% Hemanth Guruva Reddy <meethemanth@gmail.com>
 %
 % Template license:
 % CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
@@ -22,7 +18,7 @@
 % CONFIGURATIONS
 %-------------------------------------------------------------------------------
 % A4 paper size by default, use 'letterpaper' for US letter
-\documentclass[12pt, a4paper]{awesome-cv}
+\documentclass[11pt, a4paper]{awesome-cv}
 
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
@@ -39,7 +35,6 @@
 
 % Colors for text
 % Uncomment if you would like to specify your own color
-\colorlet{text}{black}
 % \definecolor{darktext}{HTML}{414141}
 % \definecolor{text}{HTML}{333333}
 % \definecolor{graytext}{HTML}{5D5D5D}
@@ -57,21 +52,21 @@
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
 % Available options: circle|rectangle,edge/noedge,left/right
-\photo[rectangle,noedge,right]{./hemanth_data/profile1.png}
-\input{hemanth_data/personalinfo.tex}
+\photo[right]{./bindhu_data/profile.png}
+\input{bindhu_data/personalinfo.tex}
 
 %-------------------------------------------------------------------------------
 \begin{document}
 
 % Print the header with above personal informations
 % Give optional argument to change alignment(C: center, L: left, R: right)
-\makecvheader
+\makecvheader[C]
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
-  {2017}
-  {Hemanth Guruva Reddy~~~·~~~Curriculum Vitae}
+  {\today}
+  {Bindhu Srinivas~~~·~~~Résumé}
   {\thepage}
 
 
@@ -79,12 +74,11 @@
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-\input{hemanth_data/summary.tex}
-\input{hemanth_data/skills.tex}
-\input{hemanth_data/experience.tex}
-\input{hemanth_data/projects-thesis.tex}
-\input{hemanth_data/education.tex}
-\input{hemanth_data/extracurricular.tex}
+\input{bindhu_data/summary.tex}
+\input{bindhu_data/experience.tex}
+\input{bindhu_data/education.tex}
+\input{bindhu_data/extracurricular.tex}
+
 
 %-------------------------------------------------------------------------------
 \end{document}
