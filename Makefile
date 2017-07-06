@@ -5,7 +5,7 @@ OUTPUT_DIR = results
 
 vpath %.pdf $(OUTPUT_DIR)
 
-all: bindhu-resume.pdf bindhu-cv.pdf bindhu-coverletter.pdf
+all:  bindhu-cv.pdf bindhu-coverletter.pdf
 
 bindhu-cv.pdf: bindhu-cv.tex
 
