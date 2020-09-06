@@ -152,8 +152,10 @@
 \setbool{acvSectionColorHighlight}{true}
 
 % Awesome section color
+% FIXME: fixed the section highlight as hack, hardcoding the choice
 \def\@sectioncolor#1#2#3{%
-  \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
+	{#1#2#3}%
+%  \ifbool{acvSectionColorHighlight}{{\color{awesome}#1#2#3}}{#1#2#3}%
 }
 
 
@@ -608,15 +610,15 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{1} L{1} L{1} L{1} L{1} L{1} }
 }{%
     \end{tabular*}
   \end{center}
 }
 % Define a line of cv information(honor, award or something else)
-% Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
-\newcommand*{\cvhonor}[4]{%
-  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+% Usage: \cvhonor{<names>}{(Date)}{<title of article>}{<title of Periodical>}{<volume(issue number)>}{<page-numbers>}
+\newcommand*{\cvhonor}[6]{%
+  \honortitlestyle{#1} & (\honordatestyle{#2}) & \honortitlestyle{#3} & \honortitlestyle{#4} & \honordatestyle{#5} & \honordatestyle{#6} \\
 }
 
 % Define an environment for cvskill
